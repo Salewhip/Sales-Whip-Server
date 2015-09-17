@@ -9,16 +9,44 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    //location object
+    var manager:CLLocationManager = CLLocationManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //location manager
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        if iOS8 {
+            manager.requestWhenInUseAuthorization()
+        }
+        
+        manager.startUpdatingLocation()
+
+        //***************************
+        //Parse key initiallization
+        //it is used for login(authorizing client user and server business user)
+        //and storing the data of deals which is created , updated and deleted by business and viewed by both
+        Parse.setApplicationId(appId, clientKey: appSecret)
+        // check if user is logged in
+        if PFUser.currentUser() != nil && PFUser.currentUser()!.isAuthenticated() {
+            //if user is logged in, go to default view
+            
+        } else {
+            //if user is not logged ,in go to login page
+            var gotologin = storyb.instantiateViewControllerWithIdentifier(K_LOGGEDIN_VC_KEY) as! LoginViewController
+            window!.rootViewController = gotologin
+        }
+
+        
         return true
     }
-
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
