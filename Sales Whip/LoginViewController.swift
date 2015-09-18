@@ -39,6 +39,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         PFUser.logInWithUsernameInBackground(usernameTF.text, password: passwordTF.text)  { (getuser, error) -> Void in
             if getuser != nil {
                 var currentuser : PFUser = PFUser.currentUser()!
+                
                 currentuser.setObject(true, forKey: "launchFirst")
                 //record that the user previously logged in
                 if UIDevice.currentDevice().model != "iPhone Simulator" {

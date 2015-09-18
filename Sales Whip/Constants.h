@@ -38,5 +38,6 @@
 #define K_ADD_LOCATION_ON_MAP                 "K_ADD_LOCATION_ON_MAP"
 #define K_ADD_LOCATION_ON_MAP                 "K_ADD_LOCATION_ON_MAP"
 #define K_USER_LOG_OUT                 "K_USER_LOG_OUT"
+#define K_USER_NOT_ADMIN                 "K_USER_NOT_ADMIN"
 
 #endif

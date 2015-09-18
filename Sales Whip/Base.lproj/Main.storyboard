@@ -91,6 +91,7 @@
                         <outlet property="usernameTF" destination="z5d-pH-yUz" id="olP-cN-Dlt"/>
                         <segue destination="ZGB-bO-2zd" kind="modal" identifier="K_REG_VC_KEY" id="TWR-fA-0I6"/>
                         <segue destination="A24-qn-mIc" kind="modal" identifier="K_LOGIN_SUCESS_KEY" id="yRU-qM-usQ"/>
+                        <segue destination="6aX-I5-T1K" kind="modal" identifier="K_USER_NOT_ADMIN" id="TE4-aq-7TW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -806,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9u-VT-swn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14.5" y="1110.5"/>
+            <point key="canvasLocation" x="86.5" y="1198.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xpt-YT-PT9">
@@ -1053,4 +1054,7 @@
         <image name="firstaid" width="31" height="34"/>
         <image name="star" width="31" height="34"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TE4-aq-7TW"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -35,6 +35,7 @@ class AddDealsVC: UIViewController , UITextFieldDelegate, AddDealsLocationDelega
     //getting useful info (which will decide the main use of this class(for adding or editing deal))from source view(AllDealsListVC)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         nameTextField.delegate = self
         if !boolAdd {
             self.navigationItem.title = objectDealEditable.objectForKey(NameBusiness) as? String

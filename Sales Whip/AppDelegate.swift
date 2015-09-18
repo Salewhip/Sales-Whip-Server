@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        //location manager
+        // Remove the third tab from a tab bar controlled by a tab bar controller
+    
+                //location manager
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         if iOS8 {
@@ -36,7 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // check if user is logged in
         if PFUser.currentUser() != nil && PFUser.currentUser()!.isAuthenticated() {
             //if user is logged in, go to default view
-            
+            if let tabBarController = self.window?.rootViewController as? UITabBarController {
+                var indexToRemove : Int = 1
+
+                if PFUser.currentUser()?.username != "admin" {
+                    indexToRemove = 0
+                    if indexToRemove < tabBarController.viewControllers?.count {
+                        var viewControllers = tabBarController.viewControllers
+                        viewControllers?.removeAtIndex(indexToRemove)
+                        tabBarController.viewControllers = viewControllers
+                        tabBarController.selectedIndex = 0
+                    }
+
+                }
+                            }
         } else {
             //if user is not logged ,in go to login page
             var gotologin = storyb.instantiateViewControllerWithIdentifier(K_LOGGEDIN_VC_KEY) as! LoginViewController

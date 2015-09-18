@@ -28,7 +28,20 @@ class UserHomeVC: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if PFUser.currentUser()?.username != "admin" && self.tabBarController?.viewControllers?.count == 5 {
+            
+            var indexToRemove : Int = 0;
+            if let tabBarController = self.tabBarController {
+                
+                if indexToRemove < tabBarController.viewControllers?.count {
+                    var viewControllers = tabBarController.viewControllers
+                    viewControllers?.removeAtIndex(indexToRemove)
+                    tabBarController.viewControllers = viewControllers
+                    tabBarController.selectedIndex = 0
+                }
+            }
+        }
+
        // mapView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "revealRegionDetailsWithLongPressOnMap:"))
 
         manager.delegate = self
