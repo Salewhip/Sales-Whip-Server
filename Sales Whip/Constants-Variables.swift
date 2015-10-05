@@ -21,6 +21,8 @@ let iosVersion = NSString(string: Device.systemVersion).doubleValue
 let iOS8 = iosVersion >= 8
 let iOS7 = iosVersion >= 7 && iosVersion < 8
 
+let googleMapOfficialKey = "AIzaSyCjnyx5_bYXZUcMJuOpeekNn51I1d3wDiI"
+let googlePlacesOfficialKey = "AIzaSyDEQuw1ZwVGlWDQOa5WWoThd89_D6maU7A"
 
 
 let storyb = UIStoryboard(name: "Main", bundle: nil)

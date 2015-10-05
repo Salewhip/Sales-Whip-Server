@@ -74,6 +74,9 @@ class AllDealsListVC: UIViewController ,UITableViewDelegate , UITableViewDataSou
     // adding new deal
     @IBAction func button_add_tapped(sender: AnyObject) {
         boolAdd = true
+        var appD = UIApplication.sharedApplication().delegate as! AppDelegate
+        appD.previousLoc = CLLocation(latitude: 0.0, longitude: 0.0)
+
         self.performSegueWithIdentifier(K_ADD_DEALS_SEGUE, sender: self)
     }
     

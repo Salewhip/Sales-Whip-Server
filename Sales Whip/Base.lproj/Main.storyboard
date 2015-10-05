@@ -296,22 +296,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3d0-7R-4hz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tp2-kv-A0P" id="Ynr-ta-USh"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jkB-QZ-mvX">
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="HtE-DI-uuI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HtE-DI-uuI" id="wZL-t5-wni">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tp2-kv-A0P" id="al7-du-IqH"/>
+                                    <outlet property="delegate" destination="tp2-kv-A0P" id="lQP-rC-nIj"/>
+                                </connections>
+                            </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HmN-Sl-lzb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="HmN-Sl-lzb" secondAttribute="trailing" id="QOE-6B-zdz"/>
-                            <constraint firstItem="HmN-Sl-lzb" firstAttribute="top" secondItem="52j-ob-5w6" secondAttribute="bottom" id="dAY-EB-PCg"/>
-                            <constraint firstItem="HmN-Sl-lzb" firstAttribute="leading" secondItem="QDY-eT-kSi" secondAttribute="leading" id="fUA-X7-uDP"/>
-                            <constraint firstItem="qd7-Bk-Y4R" firstAttribute="top" secondItem="HmN-Sl-lzb" secondAttribute="bottom" id="gw6-wL-lMH"/>
+                            <constraint firstItem="3d0-7R-4hz" firstAttribute="leading" secondItem="QDY-eT-kSi" secondAttribute="leading" id="2mo-Yp-sYm"/>
+                            <constraint firstAttribute="trailing" secondItem="3d0-7R-4hz" secondAttribute="trailing" id="7C9-5d-lG8"/>
+                            <constraint firstItem="qd7-Bk-Y4R" firstAttribute="top" secondItem="HmN-Sl-lzb" secondAttribute="bottom" id="GJi-Tb-bvS"/>
+                            <constraint firstAttribute="trailing" secondItem="jkB-QZ-mvX" secondAttribute="trailing" id="JK1-Cm-qlF"/>
+                            <constraint firstItem="HmN-Sl-lzb" firstAttribute="top" secondItem="3d0-7R-4hz" secondAttribute="bottom" id="JXe-oa-R22"/>
+                            <constraint firstItem="jkB-QZ-mvX" firstAttribute="top" secondItem="3d0-7R-4hz" secondAttribute="bottom" id="a1W-Fj-ubp"/>
+                            <constraint firstItem="3d0-7R-4hz" firstAttribute="top" secondItem="52j-ob-5w6" secondAttribute="bottom" id="bDQ-p6-Nwx"/>
+                            <constraint firstAttribute="trailing" secondItem="HmN-Sl-lzb" secondAttribute="trailing" id="dEo-xq-UPy"/>
+                            <constraint firstItem="qd7-Bk-Y4R" firstAttribute="top" secondItem="jkB-QZ-mvX" secondAttribute="bottom" id="e8u-0G-L96"/>
+                            <constraint firstItem="jkB-QZ-mvX" firstAttribute="leading" secondItem="QDY-eT-kSi" secondAttribute="leading" id="eug-AQ-i8l"/>
+                            <constraint firstItem="HmN-Sl-lzb" firstAttribute="leading" secondItem="QDY-eT-kSi" secondAttribute="leading" id="fxL-m3-VNN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mXm-dK-I05"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="HmN-Sl-lzb" id="Nz1-kS-s2u"/>
+                        <outlet property="searchBar" destination="3d0-7R-4hz" id="ymD-58-Uzb"/>
+                        <outlet property="tableView" destination="jkB-QZ-mvX" id="hn9-FW-SHq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g49-Iw-LuY" userLabel="First Responder" sceneMemberID="firstResponder"/>

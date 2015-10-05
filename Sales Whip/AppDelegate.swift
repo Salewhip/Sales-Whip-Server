@@ -14,14 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     //location object
     var manager:CLLocationManager = CLLocationManager()
+    var previousLoc:CLLocation = CLLocation()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        previousLoc = CLLocation(latitude: 0.0, longitude: 0.0)
         // Override point for customization after application launch.
         
         // Remove the third tab from a tab bar controlled by a tab bar controller
     
                 //location manager
+        
+        GMSServices.provideAPIKey(googleMapOfficialKey)
+
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         if iOS8 {

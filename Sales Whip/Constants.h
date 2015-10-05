@@ -13,6 +13,11 @@
 #define appId           "x6VP8qBvrnqraQuNV5fozgRWh1rpBOrq7rmKkB0W"
 #define appSecret       "wSKT8a9NRtr84iIJ0SC7qYG7pBiyk0LshR68Bqev"
 
+//temp parse id
+#define appIdTemp           "2ip3HYNu6NVYJ2kN3CWczoYSScB7drdhFclK6vuv"
+#define appSecretTemp       "7GKrhDqthcxvrEbDoV5tawVA6uhenayQpbkVxjaU"
+
+
 //parse classes keys
 #define Address                 "Address"
 #define Category                "Category"
@@ -26,6 +31,9 @@
 #define zip                     "zip"
 #define Favourite                     "Favourite"
 #define location                     "location"
+
+//location stored for deals
+#define K_PREVIOUS_STORED_LOCATION                     "K_PREVIOUS_STORED_LOCATION"
 
 //segue vc keys
 #define K_LOGGEDIN_VC_KEY                    "K_LOGGEDIN_VC_KEY"

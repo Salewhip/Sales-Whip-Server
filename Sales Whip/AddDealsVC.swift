@@ -37,11 +37,18 @@ class AddDealsVC: UIViewController , UITextFieldDelegate, AddDealsLocationDelega
         super.viewDidLoad()
         
         nameTextField.delegate = self
+        //refresh previous location to nil
+        
         if !boolAdd {
+            
             self.navigationItem.title = objectDealEditable.objectForKey(NameBusiness) as? String
-
+            var pfLoc = objectDealEditable.objectForKey(location) as! PFGeoPoint
+            dealsLocation = CLLocation(latitude: pfLoc.latitude, longitude: pfLoc.longitude)
             self.edit_deal()
         }
+        else {
+            
+                    }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var segueLocationVc: AnyObject = segue.destinationViewController
@@ -50,11 +57,21 @@ class AddDealsVC: UIViewController , UITextFieldDelegate, AddDealsLocationDelega
             segueVc.delegate = self
                 segueVc.locationAdded = boolAdd
                 if !boolAdd {
-                    segueVc.dealsPrevLoc = objectDealEditable.objectForKey(location) as! PFGeoPoint
+                    //segueVc.dealsPrevLoc = objectDealEditable.objectForKey(location) as! PFGeoPoint
+                    segueVc.dealsPrevLoc = PFGeoPoint(location: dealsLocation)
                     
+                }
+                else {
+                    var appD = UIApplication.sharedApplication().delegate as! AppDelegate
+                    if appD.previousLoc.coordinate.latitude != 0.0 && appD.previousLoc.coordinate.longitude != 0.0 {
+                        segueVc.locationAdded = false
+
+                        segueVc.dealsPrevLoc = PFGeoPoint(location: dealsLocation)
+                    }
                 }
             }
         }
+        
     }
     func changeAddLocationButtonStateToSelected(loc: CLLocationCoordinate2D) {
         
@@ -62,6 +79,9 @@ class AddDealsVC: UIViewController , UITextFieldDelegate, AddDealsLocationDelega
         addLocationButton.setBackgroundImage(UIImage(named: "star"), forState: UIControlState.Normal)
         locationTextField.text = "\((loc.latitude,loc.longitude))"
         dealsLocation = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
+        
+        var appD = UIApplication.sharedApplication().delegate as! AppDelegate
+        appD.previousLoc = dealsLocation
     }
     //change the preference of the deal to true or false as HotDeal status
     @IBAction func hotDeal_switch_value_changed(sender: AnyObject) {
