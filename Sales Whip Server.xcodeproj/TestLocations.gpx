@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    <wpt lat="28.63" lon="77.07">
+         <name>Google</name>
+    </wpt>
+    <wpt lat="28.65" lon="77.03">
+      <name>Apple</name>
+    </wpt>
+    
+</gpx>

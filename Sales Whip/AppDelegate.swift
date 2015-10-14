@@ -1,4 +1,4 @@
-//
+ //
 //  AppDelegate.swift
 //  Sales Whip
 //
@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     //location object
     var manager:CLLocationManager = CLLocationManager()
     var previousLoc:CLLocation = CLLocation()
+    
+    enum Actions:String{
+        case favourite = "FAVOURITE"
+        case map = "MAP"
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -30,11 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         if iOS8 {
-            manager.requestWhenInUseAuthorization()
+            //manager.requestWhenInUseAuthorization()
         }
-        
+        manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
-
+        
+        
         //***************************
         //Parse key initiallization
         //it is used for login(authorizing client user and server business user)
@@ -63,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             window!.rootViewController = gotologin
         }
 
+        addButtonInLocalNotification()
         
         return true
     }
@@ -87,6 +94,131 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        
+    }
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        
+        // Handle notification action *****************************************
+        if notification.category == "METHOD_CATEGORY" {
+            
+            let action = Actions(rawValue: identifier!)!
+            
+            switch action{
+                
+            case Actions.favourite:
+                saveTappedFromNotificationBanner()
+                
+            case Actions.map:
+                mapTappedFromNotificationBanner(notification)
+                
+            }
+        }
+    }
+    func mapTappedFromNotificationBanner(notification : UILocalNotification) {
+        var tabBarVC = UITabBarController()
+        if let tabBarCont = self.window?.rootViewController as? UITabBarController {
+            tabBarVC = tabBarCont
+        }
+        else if let tabBarCont = self.window?.rootViewController?.presentedViewController as? UITabBarController {
+            tabBarVC = tabBarCont
+        }
+        tabBarVC.selectedIndex = 0
+        NSNotificationCenter.defaultCenter().postNotificationName(LOCAL_NOTIFICATION, object: notification.region)
+    }
+    func saveTappedFromNotificationBanner() {
+        
+    }
+    func addButtonInLocalNotification() {
+        let favourite = UIMutableUserNotificationAction()
+        favourite.identifier = Actions.favourite.rawValue
+        favourite.title = "FAVOURITE"
+        favourite.activationMode = UIUserNotificationActivationMode.Background
+        favourite.authenticationRequired = true
+        favourite.destructive = false
+        
+        // decrement Action
+        let map = UIMutableUserNotificationAction()
+        map.identifier = Actions.map.rawValue
+        map.title = "MAP"
+        map.activationMode = UIUserNotificationActivationMode.Foreground
+        map.authenticationRequired = true
+        map.destructive = false
+        
+        let methodCategory = UIMutableUserNotificationCategory()
+        methodCategory.identifier = "METHOD_CATEGORY"
+        
+        // B. Set actions for the minimal context
+        methodCategory.setActions([favourite, map],
+            forContext: UIUserNotificationActionContext.Default)
+        
+        let types = UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge
+        let settings = UIUserNotificationSettings(forTypes: types, categories: NSSet(object: methodCategory) as Set<NSObject>)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        //application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Sound | .Alert | .Badge, categories: nil))
+        //UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
+    }
+
+    func handleRegionEvent(region: CLRegion) {
+        // Show an alert if application is active
+        if UIApplication.sharedApplication().applicationState == .Active {
+            if let message = region.identifier {
+                if let viewController = window?.rootViewController {
+                    showSimpleAlertWithTitle(nil, message: message, viewController: viewController)
+                }
+            }
+        } else {
+            // Otherwise present a local notification
+            var notification = UILocalNotification()
+            notification.alertBody = region.identifier
+            notification.soundName = "Default";
+            notification.category = "METHOD_CATEGORY"
+            notification.region = region
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
+        
+    }
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        
+        var lastLocation = manager.location
+        
+        var doesItContainMyPoint : Bool = false
+        
+        if lastLocation==nil{
+            doesItContainMyPoint = false
+        }
+        else
+        {
+            var theLocationCoordinate = lastLocation.coordinate as CLLocationCoordinate2D
+            var theRegion = region as! CLCircularRegion
+            doesItContainMyPoint = theRegion.containsCoordinate(theLocationCoordinate)
+        }
+
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
+        }
+    }
+    
+    func notefromRegionIdentifier(identifier: String) -> String? {
+//        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+//            for savedItem in savedItems {
+//                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+//                    if geotification.identifier == identifier {
+//                        return geotification.note
+//                    }
+//                }
+//            }
+//        }
+        return nil
     }
 
 

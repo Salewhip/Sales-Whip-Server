@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Geotify requires access to your phone’s location to notify you when you enter or leave a geofence.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To Find Nearby Users</string>
 	<key>UILaunchStoryboardName</key>

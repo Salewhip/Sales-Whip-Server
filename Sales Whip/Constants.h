@@ -17,7 +17,8 @@
 #define appIdTemp           "2ip3HYNu6NVYJ2kN3CWczoYSScB7drdhFclK6vuv"
 #define appSecretTemp       "7GKrhDqthcxvrEbDoV5tawVA6uhenayQpbkVxjaU"
 
-
+//notification key of local notificatoin
+#define LOCAL_NOTIFICATION                        "notifyAfterUserEnteredTheRegionOfDeals"
 //parse classes keys
 #define Address                 "Address"
 #define Category                "Category"

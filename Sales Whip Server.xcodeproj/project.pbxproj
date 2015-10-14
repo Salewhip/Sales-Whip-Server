@@ -17,6 +17,7 @@
 		F46D66551B8EF9C300A9A8DE /* AddDealsLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D66541B8EF9C300A9A8DE /* AddDealsLocationVC.swift */; };
 		F48E3FAD1B906F5D001D8CC0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48E3FAC1B906F5D001D8CC0 /* AudioToolbox.framework */; };
 		F49A08BF1B83182D006E3ECF /* DealsObjectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A08BE1B83182D006E3ECF /* DealsObjectProperty.swift */; };
+		F4BF02B51BC9230A00C9F82C /* GeofenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF02B41BC9230A00C9F82C /* GeofenceVC.swift */; };
 		F4C0DE181B8465A8001EEA3A /* CategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C0DE171B8465A8001EEA3A /* CategoryListVC.swift */; };
 		F4C0DE1C1B846C82001EEA3A /* SIngleCategoryDealsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C0DE1B1B846C82001EEA3A /* SIngleCategoryDealsVC.swift */; };
 		F4CB85FA1B8492EB0053D72B /* FavouriteDealsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CB85F91B8492EB0053D72B /* FavouriteDealsVC.swift */; };
@@ -33,6 +34,7 @@
 		F4CC02B11BBD361D00A526D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CC02B01BBD361C00A526D3 /* CoreData.framework */; };
 		F4D0F2911B84452600D1E1AC /* UserHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D0F2901B84452600D1E1AC /* UserHomeVC.swift */; };
 		F4D0F2931B8447B300D1E1AC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D0F2921B8447B300D1E1AC /* Social.framework */; };
+		F4D3982C1BCD0D5F00A4498F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3982B1BCD0D5F00A4498F /* Utilities.swift */; };
 		F4ED9D8B1B81FE95002A0A40 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ED9D8A1B81FE95002A0A40 /* CoreLocation.framework */; };
 		F4ED9D8D1B81FEA0002A0A40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ED9D8C1B81FEA0002A0A40 /* CoreGraphics.framework */; };
 		F4ED9D8F1B81FEA7002A0A40 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ED9D8E1B81FEA7002A0A40 /* CFNetwork.framework */; };
@@ -77,6 +79,7 @@
 		F46D66541B8EF9C300A9A8DE /* AddDealsLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDealsLocationVC.swift; sourceTree = "<group>"; };
 		F48E3FAC1B906F5D001D8CC0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F49A08BE1B83182D006E3ECF /* DealsObjectProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsObjectProperty.swift; sourceTree = "<group>"; };
+		F4BF02B41BC9230A00C9F82C /* GeofenceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofenceVC.swift; sourceTree = "<group>"; };
 		F4C0DE171B8465A8001EEA3A /* CategoryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListVC.swift; sourceTree = "<group>"; };
 		F4C0DE1B1B846C82001EEA3A /* SIngleCategoryDealsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIngleCategoryDealsVC.swift; sourceTree = "<group>"; };
 		F4CB85F91B8492EB0053D72B /* FavouriteDealsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteDealsVC.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		F4CC02B01BBD361C00A526D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4D0F2901B84452600D1E1AC /* UserHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHomeVC.swift; sourceTree = "<group>"; };
 		F4D0F2921B8447B300D1E1AC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F4D3982B1BCD0D5F00A4498F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F4ED9D8A1B81FE95002A0A40 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F4ED9D8C1B81FEA0002A0A40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F4ED9D8E1B81FEA7002A0A40 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -167,6 +171,7 @@
 			children = (
 				F4CB85F61B8492920053D72B /* Business Views */,
 				F4D0F28F1B8444E500D1E1AC /* UserViews */,
+				F4BF02B41BC9230A00C9F82C /* GeofenceVC.swift */,
 			);
 			name = "Tab Views";
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				F4182C8B1B8F33BB00638A18 /* Sales_Whip-Bridging-Header.h */,
 				F4ED9DF81B81CFDD00317C5A /* Constants.h */,
 				F4ED9E0A1B81E84700317C5A /* Constants-Variables.swift */,
+				F4D3982B1BCD0D5F00A4498F /* Utilities.swift */,
 				F4ED9DD51B81BB0500317C5A /* AppDelegate.swift */,
 				F4CE63991BA9496900684D18 /* Deals Propery Class */,
 				F498B1EF1B833E32009F9EBF /* Login & SignUp */,
@@ -472,6 +478,7 @@
 				F49A08BF1B83182D006E3ECF /* DealsObjectProperty.swift in Sources */,
 				F44980CB1B82F4B700B7140E /* DealsListTableCell.swift in Sources */,
 				F4F648DB1B847EC600099E8B /* HotDealsVC.swift in Sources */,
+				F4D3982C1BCD0D5F00A4498F /* Utilities.swift in Sources */,
 				F44430DB1BC2413100F4BA3B /* CustomPointAnnotation.swift in Sources */,
 				F46D66551B8EF9C300A9A8DE /* AddDealsLocationVC.swift in Sources */,
 				F4D0F2911B84452600D1E1AC /* UserHomeVC.swift in Sources */,
@@ -480,6 +487,7 @@
 				F4ED9DD81B81BB0500317C5A /* LoginViewController.swift in Sources */,
 				F4ED9DD61B81BB0500317C5A /* AppDelegate.swift in Sources */,
 				F44980C91B82F47400B7140E /* AllDealsListVC.swift in Sources */,
+				F4BF02B51BC9230A00C9F82C /* GeofenceVC.swift in Sources */,
 				F4ED9E0B1B81E84700317C5A /* Constants-Variables.swift in Sources */,
 				F4C0DE1C1B846C82001EEA3A /* SIngleCategoryDealsVC.swift in Sources */,
 			);

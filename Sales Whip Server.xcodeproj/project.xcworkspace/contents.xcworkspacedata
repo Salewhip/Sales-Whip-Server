@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../../Downloads/Geotify-Final/Geotify/TestLocations.gpx">
+   </FileRef>
+   <FileRef
       location = "self:Sales Whip Server.xcodeproj">
    </FileRef>
 </Workspace>
