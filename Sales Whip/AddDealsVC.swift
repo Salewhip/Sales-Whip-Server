@@ -101,7 +101,7 @@ class AddDealsVC: UIViewController , UITextFieldDelegate, AddDealsLocationDelega
             
             //if source of this view is asking for adding new deals
             if boolAdd != false {
-                var objDeals : PFObject = PFObject(className: "AvailableDeals")
+                var objDeals : PFObject = PFObject(className: AvailableDeals)
                 //different type of detail of deals saving in parse under AvailableDeals class
                 objDeals = self.updatePfobjectOfDeals(objDeals)
                 

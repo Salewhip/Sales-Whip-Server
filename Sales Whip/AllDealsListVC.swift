@@ -43,8 +43,8 @@ class AllDealsListVC: UIViewController ,UITableViewDelegate , UITableViewDataSou
 
 //send the reference of cell tapped to retreive the exact cell data from array using this index
         indexTapped = -1
-        //retreive the data from parse class "AvailableDeals" which contain all the deals available today
-        var queryObjDeals = PFQuery(className: "AvailableDeals")
+        //retreive the data from parse class AvailableDeals which contain all the deals available today
+        var queryObjDeals = PFQuery(className: AvailableDeals)
         queryObjDeals.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 

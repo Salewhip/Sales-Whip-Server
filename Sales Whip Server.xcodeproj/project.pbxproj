@@ -34,6 +34,7 @@
 		F4CC02B11BBD361D00A526D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CC02B01BBD361C00A526D3 /* CoreData.framework */; };
 		F4D0F2911B84452600D1E1AC /* UserHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D0F2901B84452600D1E1AC /* UserHomeVC.swift */; };
 		F4D0F2931B8447B300D1E1AC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D0F2921B8447B300D1E1AC /* Social.framework */; };
+		F4D308FB1BCF6179009A6FF6 /* TestLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F4D308FA1BCF6179009A6FF6 /* TestLocations.gpx */; };
 		F4D3982C1BCD0D5F00A4498F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3982B1BCD0D5F00A4498F /* Utilities.swift */; };
 		F4ED9D8B1B81FE95002A0A40 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ED9D8A1B81FE95002A0A40 /* CoreLocation.framework */; };
 		F4ED9D8D1B81FEA0002A0A40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ED9D8C1B81FEA0002A0A40 /* CoreGraphics.framework */; };
@@ -96,6 +97,7 @@
 		F4CC02B01BBD361C00A526D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4D0F2901B84452600D1E1AC /* UserHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHomeVC.swift; sourceTree = "<group>"; };
 		F4D0F2921B8447B300D1E1AC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F4D308FA1BCF6179009A6FF6 /* TestLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLocations.gpx; path = "../../../Downloads/Geotify-Final/Geotify/TestLocations.gpx"; sourceTree = "<group>"; };
 		F4D3982B1BCD0D5F00A4498F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F4ED9D8A1B81FE95002A0A40 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F4ED9D8C1B81FEA0002A0A40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -260,6 +262,7 @@
 		F4ED9DC71B81BB0500317C5A = {
 			isa = PBXGroup;
 			children = (
+				F4D308FA1BCF6179009A6FF6 /* TestLocations.gpx */,
 				F4ED9DD21B81BB0500317C5A /* Sales Whip */,
 				F4ED9DE81B81BB0600317C5A /* Sales WhipTests */,
 				F4ED9DD11B81BB0500317C5A /* Products */,
@@ -454,6 +457,7 @@
 				F4ED9DDB1B81BB0500317C5A /* Main.storyboard in Resources */,
 				F4ED9DE01B81BB0500317C5A /* LaunchScreen.xib in Resources */,
 				F4ED9DDD1B81BB0500317C5A /* Images.xcassets in Resources */,
+				F4D308FB1BCF6179009A6FF6 /* TestLocations.gpx in Resources */,
 				F4CC029E1BBD2CF600A526D3 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

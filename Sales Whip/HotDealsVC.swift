@@ -27,7 +27,7 @@ class HotDealsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             //var hotDealsArray : NSArray = hotDealsArr
             //Filter the deals that are marked as HotDeals
 
-            var queryObjDeals = PFQuery(className: "AvailableDeals")
+            var queryObjDeals = PFQuery(className: AvailableDeals)
             queryObjDeals.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
                 
                 if error == nil {
@@ -59,7 +59,10 @@ class HotDealsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
         //}
     }
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayDeals.count
     }

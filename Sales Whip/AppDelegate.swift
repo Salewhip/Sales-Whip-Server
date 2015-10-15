@@ -108,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             switch action{
                 
             case Actions.favourite:
-                saveTappedFromNotificationBanner()
+                saveTappedFromNotificationBanner(notification)
                 
             case Actions.map:
                 mapTappedFromNotificationBanner(notification)
@@ -125,16 +125,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             tabBarVC = tabBarCont
         }
         tabBarVC.selectedIndex = 0
-        NSNotificationCenter.defaultCenter().postNotificationName(LOCAL_NOTIFICATION, object: notification.region)
+        NSNotificationCenter.defaultCenter().postNotificationName(LOCAL_NOTIFICATION_MAP, object: notification.region)
     }
-    func saveTappedFromNotificationBanner() {
+    func saveTappedFromNotificationBanner(notification : UILocalNotification) {
+        var tabBarVC = UITabBarController()
+        if let tabBarCont = self.window?.rootViewController as? UITabBarController {
+            tabBarVC = tabBarCont
+        }
+        else if let tabBarCont = self.window?.rootViewController?.presentedViewController as? UITabBarController {
+            tabBarVC = tabBarCont
+        }
+        tabBarVC.selectedIndex = 3
         
+        NSNotificationCenter.defaultCenter().postNotificationName(LOCAL_NOTIFICATION_FAVOURITE, object: notification.region)
+
     }
     func addButtonInLocalNotification() {
         let favourite = UIMutableUserNotificationAction()
         favourite.identifier = Actions.favourite.rawValue
         favourite.title = "FAVOURITE"
-        favourite.activationMode = UIUserNotificationActivationMode.Background
+        favourite.activationMode = UIUserNotificationActivationMode.Foreground
         favourite.authenticationRequired = true
         favourite.destructive = false
         

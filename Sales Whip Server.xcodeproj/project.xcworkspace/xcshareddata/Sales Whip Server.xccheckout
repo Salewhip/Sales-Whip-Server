@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CBEE4204-C1A4-4BC4-BE9B-D7D37A017FC7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Sales Whip Server</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6FEE6F84B2C0DD69FD6E06EDFF9D931D7FA1824C</key>
 		<string>https://github.com/Salewhip/Sales-Whip-Server.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Sales Whip Server.xcodeproj/project.xcworkspace</string>
+	<string>Sales Whip Server.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6FEE6F84B2C0DD69FD6E06EDFF9D931D7FA1824C</key>

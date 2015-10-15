@@ -18,7 +18,8 @@
 #define appSecretTemp       "7GKrhDqthcxvrEbDoV5tawVA6uhenayQpbkVxjaU"
 
 //notification key of local notificatoin
-#define LOCAL_NOTIFICATION                        "notifyAfterUserEnteredTheRegionOfDeals"
+#define LOCAL_NOTIFICATION_MAP                        "notifyMapAnnotationAfterUserEnteredTheRegionOfDeals"
+#define LOCAL_NOTIFICATION_FAVOURITE                        "notifyFavouriteAfterUserEnteredTheRegionOfDeals"
 //parse classes keys
 #define Address                 "Address"
 #define Category                "Category"
@@ -31,7 +32,10 @@
 #define NameBusiness            "NameBusiness"
 #define zip                     "zip"
 #define Favourite                     "Favourite"
+#define FavouriteDeals                     "FavouriteDeals"
 #define location                     "location"
+#define AvailableDeals                     "AvailableDeals"
+
 
 //location stored for deals
 #define K_PREVIOUS_STORED_LOCATION                     "K_PREVIOUS_STORED_LOCATION"

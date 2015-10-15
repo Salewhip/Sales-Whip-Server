@@ -20,7 +20,7 @@ class SIngleCategoryDealsVC : UIViewController, UITableViewDataSource, UITableVi
         //show title of category selected under CategoryListVC class category list
         self.navigationItem.title = categoryName
         //filter all deals from the category selected
-        var queryObjDeals = PFQuery(className: "AvailableDeals")
+        var queryObjDeals = PFQuery(className: AvailableDeals)
         queryObjDeals.whereKey(Category, equalTo: categoryName)
         queryObjDeals.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             

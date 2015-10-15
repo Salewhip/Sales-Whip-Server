@@ -62,7 +62,7 @@ class UserHomeVC: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate
         )
         //let loc = CLLocation(latitude: 21.282778, longitude: -157.829444)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "catchLocalNotification:", name: LOCAL_NOTIFICATION, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "catchLocalNotification:", name: LOCAL_NOTIFICATION_MAP, object: nil)
         
     }
     func catchLocalNotification(notif : NSNotification) {
@@ -159,7 +159,7 @@ class UserHomeVC: UIViewController , MKMapViewDelegate,CLLocationManagerDelegate
     //load all deals on map using their location stored in parse
     func addLocationOfAllDealsOnMap() {
         
-        var queryObjDeals = PFQuery(className: "AvailableDeals")
+        var queryObjDeals = PFQuery(className: AvailableDeals)
         //queryObjDeals.whereKey(l, equalTo: true)
         queryObjDeals.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             
